@@ -1,5 +1,3 @@
-server:
-  #端口号
-  port: 8081
-  #项目名，如果不设定，默认是 /
-  context-path: /
+spring:
+  profiles:
+    active: dev
