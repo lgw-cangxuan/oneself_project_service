@@ -1,4 +1,4 @@
-package com.test.controller.test;
+package com.mgr.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
