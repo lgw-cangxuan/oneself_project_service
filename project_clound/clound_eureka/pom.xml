@@ -44,7 +44,7 @@
 
     <!--eureka-->
     <properties>
-        <spring-cloud.version>Edgware.SR2</spring-cloud.version>
+        <spring-cloud.version>Edgware.SR5</spring-cloud.version>
     </properties>
     <!--springboot-->
     <parent>
