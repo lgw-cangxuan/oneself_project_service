@@ -22,8 +22,5 @@ public class UserService {
         System.out.println("123455");
         return user;
     }
-    /*public static void main(String[] arg){
-        queryUser();
-    }*/
 
 }
