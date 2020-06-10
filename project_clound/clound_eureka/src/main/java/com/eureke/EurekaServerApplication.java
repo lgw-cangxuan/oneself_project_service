@@ -5,7 +5,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
- * EurekaServerApplication class
+ * EurekaServerApplication class eureka启动类
  *
  * @author liuguowei
  * @date 2020/06/10
