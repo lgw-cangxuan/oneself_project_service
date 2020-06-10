@@ -1,3 +1,31 @@
-spring:
-  profiles:
-    active: dev
+#开发环境
+server:
+  #端口号
+  port: 8083
+
+  application:
+    name: eureka-client
+
+eureka:
+  environment: eureka-client
+  server:
+    evictionIntervalTimerInMs: 2000 #eureka server清理无效节点的时间间隔，默认60000毫秒，即60秒
+    enable-self-preservation: true # 自我保护模式（缺省为打开）
+    eviction-interval-timer-in-ms: 5000 # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+  instance:
+    preferIpAddress: true #客户端在注册时就会使用自己的ip地址而不是主机名(客户端自身加)
+    leaseRenewalIntervalInSeconds: 10 # 心跳时间，即服务续约间隔时间（缺省为30s）
+    instanceId: ${spring.cloud.client.ipAddress}:${server.port} #注册的时候显示ip: 端口
+    leaseExpirationDurationInSeconds: 10 #服务失效时间，Eureka多长时间没收到服务的renew操作，就剔除该服务，默认90秒
+  client:
+    registerWithEureka: false # 是否注册到eureka（eureka本身是不需要再注册到自己的）
+    fetchRegistry: false # 是否从eureka获取注册信息
+    healthcheck:
+      enabled: true # 开启健康检查（依赖spring-boot-starter-actuator）
+    serviceUrl:
+      defaultZone: http://172.16.62.68:8083/eureka/ #注册中心地址
+
+
+logging:
+  level:
+    com.netflix: warn #过滤Running the evict task with compensationTime 0ms日志输出
