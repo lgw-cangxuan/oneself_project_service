@@ -11,7 +11,7 @@
     <groupId>com.eureka</groupId>
     <artifactId>clound_eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>clound_eureka</name>
+    <name>cloud_eureka</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
