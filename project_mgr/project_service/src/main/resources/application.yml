@@ -5,7 +5,7 @@ spring:
 
 # 服务提供者端口号
 server:
-  port: 20000
+  port: 80001
 
 #在此指定服务注册中心地址，将当前会员服务注册到eureka注册中心上
 eureka:
