@@ -1,0 +1,14 @@
+# 服务名称
+spring:
+  application:
+    name: project_service
+
+# 服务提供者端口号
+server:
+  port: 20000
+
+# 配置Eureka Server 信息
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.62.68:8083/eureka/
