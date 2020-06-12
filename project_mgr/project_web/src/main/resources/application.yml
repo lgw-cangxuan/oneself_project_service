@@ -23,3 +23,5 @@ eureka:
     lease-renewal-interval-in-seconds: 2
     #Eureka注册中心在收到客户端最后一次心跳之后等待的时间上限，单位为秒（默认为90s），超过时间则剔除（客户端会按照此规则向Eureka服务端发送心跳检测包）
     lease-expiration-duration-in-seconds: 2
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
