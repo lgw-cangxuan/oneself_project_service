@@ -25,3 +25,9 @@ eureka:
     lease-expiration-duration-in-seconds: 2
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+ribbon:
+  #请求处理的超时时间
+  ReadTimeout: 60000
+  #请求连接的超时时间
+  ConnectTimeout: 30000

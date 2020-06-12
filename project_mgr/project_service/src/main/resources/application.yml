@@ -1,7 +1,7 @@
 # 服务名称
 spring:
   application:
-    name: project_service
+    name: project-service
 
 # 服务提供者端口号
 server:
