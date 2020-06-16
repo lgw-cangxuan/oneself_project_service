@@ -1,7 +1,0 @@
-com\web\controller\UserController.class
-com\web\feign\UserFeign.class
-com\web\bean\JsonReturnCodeEnum.class
-com\web\bean\JsonCommonCodeEnum.class
-com\web\bean\JsonReturnObject.class
-com\web\CloudWebApplication.class
-com\web\controller\BaseController.class
