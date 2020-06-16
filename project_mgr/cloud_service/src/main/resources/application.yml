@@ -1,0 +1,19 @@
+server:
+  port: 8870
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.62.68:8880/eureka/
+spring:
+  application:
+    name: producer-service
+
+  datasource:
+    url: jdbc:mysql://192.168.31.128:3306/car_base?useJDBCCompliantTimezoneShift=true&serverTimezone=UTC
+    username: root
+    password: 123456Aa@
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.service.dao

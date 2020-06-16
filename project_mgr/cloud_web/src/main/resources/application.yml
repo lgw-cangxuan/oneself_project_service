@@ -1,0 +1,11 @@
+server:
+  port: 8891
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://172.16.62.68:8880/eureka/
+
+spring:
+  application:
+    name: feigin-consumer
