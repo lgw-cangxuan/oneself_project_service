@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/user",produces = {"application/json;charset=UTF-8"})
-public class UserController {
+public class UserController extends BaseController{
     @Autowired
     private UserFeign userFeign;
 
     @GetMapping("/findAllUser")
     public String findAllUser() {
-        return userFeign.findAllUser();
+        return returnAppSuccessInfo(userFeign.findAllUser());
     }
 }
 
