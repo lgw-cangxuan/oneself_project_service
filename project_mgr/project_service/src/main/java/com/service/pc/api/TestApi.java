@@ -14,7 +14,6 @@ import javax.annotation.Resource;
  * @Date: 2020/06/12
  */
 @RestController
-@RequestMapping(value = "/test")
 public class TestApi {
     @Resource
     private TestService testService;

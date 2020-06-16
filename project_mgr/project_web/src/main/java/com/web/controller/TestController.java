@@ -1,6 +1,6 @@
 package com.web.controller;
 
-import com.web.restulf.TestFeign;
+import com.web.feign.TestFeign;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
