@@ -1,5 +1,6 @@
 server:
   port: 8870
+#注册到eureka
 eureka:
   client:
     service-url:
@@ -7,13 +8,24 @@ eureka:
 spring:
   application:
     name: producer-service
-
+  #redis配置连接
+  redis:
+    database: 0
+    host: 192.168.31.128
+    port: 6379
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 10
+        max-wait: 100000
+    timeout: 5000
+  #mysql配置连接
   datasource:
     url: jdbc:mysql://192.168.31.128:3306/car_base?useJDBCCompliantTimezoneShift=true&serverTimezone=UTC
     username: root
     password: 123456Aa@
     driver-class-name:  com.mysql.cj.jdbc.Driver
-
+#mybatis设置
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.service.pc.dao

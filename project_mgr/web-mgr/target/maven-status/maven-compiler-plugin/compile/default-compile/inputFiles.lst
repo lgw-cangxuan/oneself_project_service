@@ -1,7 +1,4 @@
-D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\bean\JsonCommonCodeEnum.java
-D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\CloudWebApplication.java
-D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\bean\JsonReturnCodeEnum.java
-D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\controller\UserController.java
-D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\bean\JsonReturnObject.java
+D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\WebMgrApplication.java
+D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\controller\rbac\UserController.java
 D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\controller\BaseController.java
 D:\myitem\oneself_project_service\project_mgr\web-mgr\src\main\java\com\web\remote\UserRemote.java

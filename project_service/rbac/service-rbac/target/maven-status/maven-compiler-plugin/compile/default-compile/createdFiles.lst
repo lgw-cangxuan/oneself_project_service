@@ -1,4 +1,4 @@
 com\service\pc\api\UserApi.class
-com\service\CloudServiceApplication.class
 com\service\pc\service\UserService.class
+com\service\RbacServiceApplication.class
 com\service\pc\dao\UserMapper.class

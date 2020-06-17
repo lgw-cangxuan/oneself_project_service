@@ -14,10 +14,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableEurekaClient
 @MapperScan({ "com.service.pc.dao"})
-public class CloudServiceApplication {
+public class RbacServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CloudServiceApplication.class, args);
+        SpringApplication.run(RbacServiceApplication.class, args);
     }
 
 }

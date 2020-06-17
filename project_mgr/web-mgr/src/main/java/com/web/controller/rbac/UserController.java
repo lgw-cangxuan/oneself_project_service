@@ -1,11 +1,15 @@
 package com.web.controller.rbac;
 
+import com.service.rbac.apilist.model.UserModel;
 import com.web.controller.BaseController;
 import com.web.remote.UserRemote;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Description: 用户操作
@@ -15,12 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/rbac/user",produces = {"application/json;charset=UTF-8"})
 public class UserController extends BaseController {
-    @Autowired
+    @Resource
     private UserRemote userRemote;
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @GetMapping("/findAllUser")
     public String findAllUser() {
-        return returnAppSuccessInfo(userRemote.findAllUser().pickBody());
+        List<UserModel> list = userRemote.findAllUser().pickBody();
+        redisTemplate.opsForValue().set("myKey","abcdef");
+        return returnAppSuccessInfo(list);
     }
 }
 
