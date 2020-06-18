@@ -6,6 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 
+/**
+ * @Description: 门户启动类
+ * @Author: lgw
+ * @Date: 2020/06/16
+ */
 @SpringBootApplication
 @EnableFeignClients(basePackages = "com.service")
 @Import(RedisConfig.class)

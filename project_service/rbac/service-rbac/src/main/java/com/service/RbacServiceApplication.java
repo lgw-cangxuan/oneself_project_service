@@ -8,8 +8,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Import;
 
 /**
- * CloudServiceApplication class
- *
+ * @Description: service启动类
  * @author lgw
  * @date 2020/06/16
  */
