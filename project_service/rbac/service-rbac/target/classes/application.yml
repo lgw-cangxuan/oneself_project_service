@@ -2,8 +2,12 @@ server:
   port: 8870
 #注册到eureka
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipaddress}:${server.port}
   client:
-    service-url:
+    serviceUrl:
       defaultZone: http://172.16.62.68:8880/eureka/
 spring:
   application:
