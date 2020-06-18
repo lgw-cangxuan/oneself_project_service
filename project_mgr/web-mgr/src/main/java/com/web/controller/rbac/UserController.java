@@ -1,5 +1,10 @@
 package com.web.controller.rbac;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.service.base.apilist.cache.RedisCache;
+import com.service.base.apilist.cache.cachekey.CacheKeyType;
 import com.service.rbac.apilist.model.UserModel;
 import com.web.controller.BaseController;
 import com.web.remote.UserRemote;
@@ -23,13 +28,13 @@ public class UserController extends BaseController {
     private UserRemote userRemote;
 
     @Resource
-    private RedisTemplate redisTemplate;
+    private RedisCache redisCache;
 
     @GetMapping("/findAllUser")
     public String findAllUser() {
         List<UserModel> list = userRemote.findAllUser().pickBody();
-        redisTemplate.opsForValue().set("myKey","abcdef");
-        return returnAppSuccessInfo(list);
+        redisCache.put(CacheKeyType.USER_INFO,"list",JSON.toJSONString(list));
+        return returnSuccessInfo(list);
     }
 }
 
