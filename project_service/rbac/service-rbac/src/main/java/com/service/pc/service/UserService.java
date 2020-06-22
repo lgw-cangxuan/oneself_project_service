@@ -1,6 +1,7 @@
 package com.service.pc.service;
 
 import com.service.base.apilist.idutil.SnowflakesIdUtil;
+import com.service.base.apilist.util.MD5_Encoding;
 import com.service.pc.dao.UserMapper;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
@@ -27,6 +28,7 @@ public class UserService {
     public Boolean insertUser(UserForm form){
         try{
             form.setId(SnowflakesIdUtil.getInstance().nextIdAsString());
+            form.setPassword(MD5_Encoding.lowerMD5(form.getPassword()));
             userMapper.insertUser(form);
             return true;
         }catch (RuntimeException ex){
@@ -36,6 +38,7 @@ public class UserService {
 
     public boolean updateUser(UserForm form){
         try{
+            form.setPassword(MD5_Encoding.lowerMD5(form.getPassword()));
             userMapper.updateUser(form);
             return true;
         }catch (RuntimeException ex){

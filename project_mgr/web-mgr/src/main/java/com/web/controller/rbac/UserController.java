@@ -57,7 +57,7 @@ public class UserController extends BaseController {
             @ApiResponse(message = "用户信息",code = 1,response = Boolean.class)
     })
     public String updateUser(@RequestBody UserForm form){
-        return returnSuccessInfo(userRemote.updateUser(form));
+        return returnSuccessInfo(userRemote.updateUser(form).pickBody());
     }
 }
 
