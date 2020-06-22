@@ -20,12 +20,18 @@ import java.util.Map;
  */
 public class BaseController {
 	public static SerializerFeature[] features = {
-			SerializerFeature.WriteMapNullValue,//输出值为null的字段
-			SerializerFeature.WriteNullNumberAsZero, //数值字段如果为null,输出为0
-			SerializerFeature.WriteNullStringAsEmpty, //字符类型字段如果为null,输出为""
-			SerializerFeature.WriteNullListAsEmpty,//List字段如果为null,输出为[]
-			SerializerFeature.WriteNullBooleanAsFalse,//Boolean字段如果为null,输出为false,而非null
-			SerializerFeature.DisableCircularReferenceDetect};//禁止循环引用检测
+			//输出值为null的字段
+			SerializerFeature.WriteMapNullValue,
+			//数值字段如果为null,输出为0
+			SerializerFeature.WriteNullNumberAsZero,
+			//字符类型字段如果为null,输出为""
+			SerializerFeature.WriteNullStringAsEmpty,
+			//List字段如果为null,输出为[]
+			SerializerFeature.WriteNullListAsEmpty,
+			//Boolean字段如果为null,输出为false,而非null
+			SerializerFeature.WriteNullBooleanAsFalse,
+			//禁止循环引用检测
+			SerializerFeature.DisableCircularReferenceDetect};
 
 	ValueFilter[] valueFilters = new ValueFilter[]{ (obj, name, value) -> {
 		if (value != null) {

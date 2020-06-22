@@ -3,14 +3,33 @@ package com.service.pc.dao;
 
 
 
+import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 
 import java.util.List;
 
+/**
+ * user mapper
+ *
+ * @author lgw
+ * @date 2020/06/16
+ */
 public interface UserMapper {
     /**
-     * 所有用户查询
+     * query user info list
      * @return
      */
     List<UserModel> findAllUser();
+
+    /**
+     * insert user info
+     * @param form user info
+     */
+    void insertUser(UserForm form);
+
+    /**
+     * update user info
+     * @param form user info
+     */
+    void updateUser(UserForm form);
 }
