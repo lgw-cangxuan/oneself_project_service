@@ -28,7 +28,7 @@ public class UserService {
     public Boolean insertUser(UserForm form){
         try{
             form.setId(SnowflakesIdUtil.getInstance().nextIdAsString());
-            form.setPassword(MD5_Encoding.lowerMD5(form.getPassword()));
+            form.setPassword(MD5_Encoding.generate(form.getPassword()));
             userMapper.insertUser(form);
             return true;
         }catch (RuntimeException ex){
@@ -38,7 +38,7 @@ public class UserService {
 
     public boolean updateUser(UserForm form){
         try{
-            form.setPassword(MD5_Encoding.lowerMD5(form.getPassword()));
+            form.setPassword(MD5_Encoding.generate(form.getPassword()));
             userMapper.updateUser(form);
             return true;
         }catch (RuntimeException ex){
