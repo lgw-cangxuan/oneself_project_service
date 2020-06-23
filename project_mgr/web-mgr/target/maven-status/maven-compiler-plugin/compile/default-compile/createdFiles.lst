@@ -1,8 +1,0 @@
-com\web\controller\LoginController.class
-com\web\exception\GlobalRequestException.class
-com\web\WebMgrApplication.class
-com\web\config\SwaggerConfig.class
-com\web\config\MgrReturnCodeEnum.class
-com\web\controller\rbac\UserController.class
-com\web\controller\BaseController.class
-com\web\remote\UserRemote.class
