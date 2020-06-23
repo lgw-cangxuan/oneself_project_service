@@ -2,7 +2,7 @@ package com.service.pc.api;
 
 import com.service.base.apilist.RequestResult;
 import com.service.pc.service.UserService;
-import com.service.rbac.apilist.form.NameAndPasswordForm;
+import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,7 +31,7 @@ public class UserApi{
     public RequestResult<Boolean> updateUser(@RequestBody UserForm form){ return new RequestResult<>(userService.updateUser(form));}
 
     @PostMapping(value = "/queryUserByNameAndPassword")
-    public RequestResult<UserModel> queryUserByNameAndPassword(@RequestBody NameAndPasswordForm form){
+    public RequestResult<UserModel> queryUserByNameAndPassword(@RequestBody PhoneAndPasswordForm form){
         return new RequestResult<>(userService.queryUserByNameAndPassword(form));
     }
 

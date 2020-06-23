@@ -12,10 +12,10 @@ import javax.validation.constraints.NotNull;
  * @Date: 2020/06/16
  */
 @Data
-public class NameAndPasswordForm {
-    @NotNull(message = "姓名不能为空")
-    @ApiModelProperty(value = "姓名")
-    private String name;
+public class PhoneAndPasswordForm {
+    @NotNull(message = "手机号码不能为空")
+    @ApiModelProperty(value = "手机号码")
+    private String phone;
 
     @NotNull(message = "密码不能为空")
     @ApiModelProperty(value = "密码")

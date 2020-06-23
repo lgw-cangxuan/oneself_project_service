@@ -24,6 +24,9 @@ public class UserForm {
     @ApiModelProperty(value = "姓名")
     private String name;
 
+    @ApiModelProperty(value = "电话号码")
+    private String phone;
+
     @NotNull(message = "密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;

@@ -24,6 +24,9 @@ public class UserModel {
     @ApiModelProperty(value = "姓名")
     private String name;
 
+    @ApiModelProperty(value = "电话号码")
+    private String phone;
+
     @ApiModelProperty(value = "密码")
     private String password;
 

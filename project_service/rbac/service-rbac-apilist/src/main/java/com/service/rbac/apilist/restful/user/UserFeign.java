@@ -1,7 +1,7 @@
 package com.service.rbac.apilist.restful.user;
 
 import com.service.base.apilist.RequestResult;
-import com.service.rbac.apilist.form.NameAndPasswordForm;
+import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 import com.service.rbac.apilist.restful.ZoneConstants;
@@ -47,5 +47,5 @@ public interface UserFeign {
      * @return
      */
     @RequestMapping(value = "/user/queryUserByNameAndPassword", method = RequestMethod.POST)
-    RequestResult<UserModel> queryUserByNameAndPassword(NameAndPasswordForm form);
+    RequestResult<UserModel> queryUserByNameAndPassword(PhoneAndPasswordForm form);
 }

@@ -3,7 +3,7 @@ package com.service.pc.service;
 import com.service.base.apilist.idutil.SnowflakesIdUtil;
 import com.service.base.apilist.util.MD5_Encoding;
 import com.service.pc.dao.UserMapper;
-import com.service.rbac.apilist.form.NameAndPasswordForm;
+import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 import org.springframework.stereotype.Service;
@@ -26,7 +26,7 @@ public class UserService {
         return list;
     }
 
-    public UserModel queryUserByNameAndPassword(NameAndPasswordForm form){
+    public UserModel queryUserByNameAndPassword(PhoneAndPasswordForm form){
         form.setPassword(MD5_Encoding.generate(form.getPassword()));
         UserModel userModel = userMapper.queryUserByNameAndPassword(form);
         return userModel;

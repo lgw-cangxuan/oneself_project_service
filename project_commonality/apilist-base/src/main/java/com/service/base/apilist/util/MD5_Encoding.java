@@ -12,6 +12,8 @@ import java.util.Random;
  * @Date: 2020/06/22
  */
 public class MD5_Encoding {
+    private final static StringBuilder SB = new StringBuilder("01234md5encoding");
+
     /**
        * 对字符串md5加密(小写+数字)
        *
@@ -66,30 +68,38 @@ public class MD5_Encoding {
      }
 
     /**
-     * 生成含有随机盐的密码
+     * 生成含固定盐的密码
      */
-    public static String generate(String password) {
+    public static String generate(String str) {
         Random r = new Random();
-        StringBuilder sb = new StringBuilder(16);
         //随机加盐
         /*sb.append(r.nextInt(99999999)).append(r.nextInt(99999999));*/
-        sb.append("01234md5encoding");
-        int len = sb.length();
+        int len = SB.length();
         if (len < 16) {
             for (int i = 0; i < 16 - len; i++) {
-                sb.append("0");
+                SB.append("0");
             }
         }
-        String salt = sb.toString();
-        password = md5Hex(password + salt);
+        String salt = SB.toString();
+        str = md5Hex(str + salt);
         char[] cs = new char[48];
         for (int i = 0; i < 48; i += 3) {
-            cs[i] = password.charAt(i / 3 * 2);
+            cs[i] = str.charAt(i / 3 * 2);
             char c = salt.charAt(i / 3);
             cs[i + 1] = c;
-            cs[i + 2] = password.charAt(i / 3 * 2 + 1);
+            cs[i + 2] = str.charAt(i / 3 * 2 + 1);
         }
         return new String(cs);
+    }
+
+    /**
+     * 生成含随机盐的密码
+     */
+    public static String generateRandomSalt(String str) {
+        Random r = new Random();
+        SB.delete(0, SB.length());
+        SB.append(r.nextInt(99999999)).append(r.nextInt(99999999));
+        return generate(str);
     }
 
     /**
@@ -122,12 +132,12 @@ public class MD5_Encoding {
 
     public static void main(String[] args) {
         // 加密+加盐
-        String password1 = generate("admin");
+        String password1 = generateRandomSalt("admin");
         System.out.println("结果：" + password1 + "   长度："+ password1.length());
         // 解码
         System.out.println(verify("admin", password1));
         // 加密+加盐
-        String password2= generate("admin");
+        String password2= generateRandomSalt("admin");
         System.out.println("结果：" + password2 + "   长度："+ password2.length());
         // 解码
         System.out.println(verify("admin", password2));

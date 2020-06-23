@@ -12,6 +12,7 @@ public enum CacheKeyType {
 	SESSION(COMMON),
 	/** 分布式锁 **/
 	REDIS_LOCK(COMMON),
+	LOGIN_USER_TOKEN(COMMON),
 	USER_INFO(USER),
 	;
 

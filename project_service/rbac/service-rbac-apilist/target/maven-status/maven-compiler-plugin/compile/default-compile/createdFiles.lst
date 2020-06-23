@@ -1,4 +1,6 @@
 com\service\rbac\apilist\form\UserForm.class
+com\service\rbac\apilist\form\PhoneAndPasswordForm.class
 com\service\rbac\apilist\restful\user\UserFeign.class
 com\service\rbac\apilist\model\UserModel.class
 com\service\rbac\apilist\restful\ZoneConstants.class
+com\service\rbac\apilist\model\LoginUserInfoModel.class

@@ -1,4 +1,6 @@
 D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\restful\user\UserFeign.java
 D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\form\UserForm.java
+D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\model\LoginUserInfoModel.java
 D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\model\UserModel.java
 D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\restful\ZoneConstants.java
+D:\myitem\oneself_project_service\project_service\rbac\service-rbac-apilist\src\main\java\com\service\rbac\apilist\form\PhoneAndPasswordForm.java
