@@ -1,6 +1,7 @@
 package com.web.remote;
 
 import com.service.base.apilist.RequestResult;
+import com.service.rbac.apilist.form.NameAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 import com.service.rbac.apilist.restful.user.UserFeign;
@@ -32,6 +33,10 @@ public class UserRemote {
 
     public RequestResult<Boolean> updateUser(UserForm form){
         return userFeign.updateUser(form);
+    }
+
+    public RequestResult<UserModel> queryUserByNameAndPassword(NameAndPasswordForm form){
+        return userFeign.queryUserByNameAndPassword(form);
     }
 
 }

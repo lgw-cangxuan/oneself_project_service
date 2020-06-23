@@ -3,6 +3,7 @@ package com.service.pc.dao;
 
 
 
+import com.service.rbac.apilist.form.NameAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 
@@ -20,6 +21,13 @@ public interface UserMapper {
      * @return
      */
     List<UserModel> findAllUser();
+
+    /**
+     * query user by name and password
+     * @param form
+     * @return
+     */
+    UserModel queryUserByNameAndPassword(NameAndPasswordForm form);
 
     /**
      * insert user info

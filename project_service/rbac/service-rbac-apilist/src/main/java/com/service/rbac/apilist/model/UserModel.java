@@ -1,7 +1,10 @@
 package com.service.rbac.apilist.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.service.base.apilist.util.CommonDateUtil;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -26,4 +29,8 @@ public class UserModel {
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
+
+    public String getCreateTimeDesc(){
+        return createTime == null ? null : CommonDateUtil.formatDateToyyyy_MM_dd_HH_mm_ss(createTime);
+    }
 }

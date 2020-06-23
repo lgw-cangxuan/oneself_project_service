@@ -5,6 +5,10 @@
         select * from t_user
     </select>
 
+    <select id="queryUserByNameAndPassword" parameterType="com.service.rbac.apilist.form.NameAndPasswordForm" resultType="com.service.rbac.apilist.model.UserModel">
+        select * from t_user where name = #{name} and password = #{password}
+    </select>
+
     <insert id="insertUser" parameterType="com.service.rbac.apilist.form.UserForm">
         insert into t_user(id, nike, name, password, create_time)
         values(#{id}, #{nike}, #{name}, #{password}, now())
