@@ -10,6 +10,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    //解决跨域问题
     proxyTable: {
       '/': {
         target: 'http://172.16.62.68:8891', //你要访问的服务器域名
