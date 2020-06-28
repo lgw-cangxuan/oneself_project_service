@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import Forget from '@/pages/Forget'
 import Home from '@/pages/Home'
 import HelloWorld from '@/components/HelloWorld'
 
@@ -22,6 +24,16 @@ export default new Router({
       path:'/helloWorld',
       name:'HelloWorld',
       component:HelloWorld
+    },
+    {
+      path:'/register',
+      name:'Register',
+      component:Register
+    },
+    {
+      path:'/forget',
+      name:'Forget',
+      component:Forget
     }
   ]
 })

@@ -20,4 +20,8 @@ public class PhoneAndPasswordForm {
     @NotNull(message = "密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;
+
+    @ApiModelProperty(value = "新密码,忘记密码使用")
+    private String newPassword;
+
 }

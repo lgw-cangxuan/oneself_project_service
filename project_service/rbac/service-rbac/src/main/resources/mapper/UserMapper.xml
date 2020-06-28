@@ -11,7 +11,7 @@
 
     <insert id="insertUser" parameterType="com.service.rbac.apilist.form.UserForm">
         insert into t_user(id, nike, name, phone, password, create_time)
-        values(#{id}, #{nike}, #{name}, #{password}, now())
+        values(#{id}, #{nike}, #{name}, #{phone}, #{password}, now())
     </insert>
 
     <update id="updateUser" parameterType="com.service.rbac.apilist.form.UserForm">

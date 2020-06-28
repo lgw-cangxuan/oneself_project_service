@@ -4,7 +4,21 @@
       <img src="../../static/imgs/login_background.jpg" width="100%" height="100%" alt="" />
     </div>
     <div class="front">
-      <h1>car系统登录</h1>
+      <h1>car系统注册</h1>
+      <div>
+        <FormItem prop="nike">
+          <Input type="text" v-model="formInline.nike" placeholder="昵称">
+          <Icon type="ios-person-outline" slot="prepend"></Icon>
+          </Input>
+        </FormItem>
+      </div>
+      <div>
+        <FormItem prop="name">
+          <Input type="text" v-model="formInline.name" placeholder="姓名">
+          <Icon type="ios-person-outline" slot="prepend"></Icon>
+          </Input>
+        </FormItem>
+      </div>
       <div>
         <FormItem prop="phone">
           <Input type="text" v-model="formInline.phone" placeholder="电话号码">
@@ -21,11 +35,11 @@
       </div>
       <div>
         <FormItem>
-          <Button type="primary" @click="handleSubmit('formInline')" id="button">登录</Button>
+          <Button type="primary" @click="handleSubmit('formInline')" id="button">注册</Button>
         </FormItem>
       </div>
       <div id="three">
-        <span class="forget"><router-link to="register">注册账号!</router-link></span>
+        <span class="forget"><router-link to="/">登录系统!</router-link></span>
         <br>
         <span class="forget"><router-link to="forget">忘记密码?</router-link></span>
       </div>
@@ -37,10 +51,18 @@
     data() {
       return {
         formInline: {
+          nike: '',
+          name: '',
           phone: '',
           password: ''
         },
         ruleInline: {
+          nike: [
+            {required: true, message: '请填写昵称', trigger: 'blur'}
+          ],
+          name: [
+            {required: true, message: '请填写姓名', trigger: 'blur'}
+          ],
           phone: [
             {required: true, message: '请填写手机号', trigger: 'blur'}
           ],
@@ -61,11 +83,11 @@
         this.$refs[name].validate((valid) => {
           if (valid) {
             this.$axios({
-              url: 'login/login',//请求的地址
+              url: 'login/register',//请求的地址
               method: 'post',//请求的方式
               data: this.formInline//请求的表单数据
             }).then(res => {
-              this.$router.push('home');
+              this.$router.push('/');
             }).catch(err => {
               this.$Message.error(err.response.data.message);
             });
@@ -87,6 +109,7 @@
     width: 190px;
   }
   #three{
+    color: blue;
     margin-top: -10px;
   }
   .forget{
@@ -101,11 +124,11 @@
   .front{
     z-index:1;
     width: 400px;
-    height: 300px;
+    height: 400px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: -150px;
+    margin-top: -200px;
     margin-left: -200px;
     background-color: #ffffff;
     padding-top: 20px;

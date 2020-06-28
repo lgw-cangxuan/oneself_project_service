@@ -32,6 +32,8 @@ public class LoginConfig implements WebMvcConfigurer {
         //添加不拦截路径
         registration.excludePathPatterns(
                 "/login/login",
+                "/login/forget",
+                "/login/register",
                 "/error",
                 "/**/*.html",
                 "/**/*.js",

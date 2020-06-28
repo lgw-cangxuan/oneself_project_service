@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public class UserForm {
-    @ApiModelProperty(value = "id")
+    @ApiModelProperty(value = "id", hidden = true)
     private String id;
 
     @NotNull(message = "昵称不能为空")
