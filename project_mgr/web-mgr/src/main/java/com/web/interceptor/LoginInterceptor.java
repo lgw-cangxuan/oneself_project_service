@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.alibaba.fastjson.JSONObject;
 import com.service.base.apilist.cache.RedisCache;
 import com.service.base.apilist.cache.cachekey.CacheKeyType;
-import com.service.base.apilist.util.MD5_Encoding;
+import com.service.base.apilist.encryption.MD5_Encoding;
 import com.web.config.MgrReturnCodeEnum;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.service.base.apilist.util;
+package com.service.base.apilist.encryption;
 
 import org.apache.commons.codec.binary.Hex;
 

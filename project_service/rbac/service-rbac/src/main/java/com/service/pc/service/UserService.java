@@ -1,7 +1,7 @@
 package com.service.pc.service;
 
 import com.service.base.apilist.idutil.SnowflakesIdUtil;
-import com.service.base.apilist.util.MD5_Encoding;
+import com.service.base.apilist.encryption.MD5_Encoding;
 import com.service.pc.dao.UserMapper;
 import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;

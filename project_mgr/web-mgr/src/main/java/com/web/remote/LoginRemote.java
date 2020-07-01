@@ -4,7 +4,7 @@ import com.service.base.apilist.RequestResult;
 import com.service.base.apilist.cache.RedisCache;
 import com.service.base.apilist.cache.cachekey.CacheKeyType;
 import com.service.base.apilist.enums.JsonCommonCodeEnum;
-import com.service.base.apilist.util.MD5_Encoding;
+import com.service.base.apilist.encryption.MD5_Encoding;
 import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.LoginUserInfoModel;
