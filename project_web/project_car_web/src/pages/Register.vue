@@ -3,8 +3,8 @@
     <div class="register_front">
       <h1>car系统注册</h1>
       <div>
-        <FormItem prop="nike">
-          <Input type="text" v-model="formInline.nike" placeholder="昵称">
+        <FormItem prop="nickname">
+          <Input type="text" v-model="formInline.nickname" placeholder="昵称">
           <Icon type="ios-person-outline" slot="prepend"></Icon>
           </Input>
         </FormItem>
@@ -52,13 +52,13 @@
           backgroundSize: "100% 100%"
         },
         formInline: {
-          nike: '',
+          nickname: '',
           name: '',
           phone: '',
           password: ''
         },
         ruleInline: {
-          nike: [
+          nickname: [
             {required: true, message: '请填写昵称', trigger: 'blur'}
           ],
           name: [

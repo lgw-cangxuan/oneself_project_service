@@ -10,14 +10,14 @@
     </select>
 
     <insert id="insertUser" parameterType="com.service.rbac.apilist.form.UserForm">
-        insert into t_user(id, nike, name, phone, password, create_time)
-        values(#{id}, #{nike}, #{name}, #{phone}, #{password}, now())
+        insert into t_user(id, nickname, name, phone, password, create_time)
+        values(#{id}, #{nickname}, #{name}, #{phone}, #{password}, now())
     </insert>
 
     <update id="updateUser" parameterType="com.service.rbac.apilist.form.UserForm">
         update t_user
         <set>
-            <if test="nike != null and nike != ''">nike = #{nike},</if>
+            <if test="nickname != null and nickname != ''">nickname = #{nickname},</if>
             <if test="name != null and name != ''">name = #{name},</if>
             <if test="phone != null and phone != ''">phone = #{phone},</if>
             <if test="password != null and password != ''">password = #{password},</if>

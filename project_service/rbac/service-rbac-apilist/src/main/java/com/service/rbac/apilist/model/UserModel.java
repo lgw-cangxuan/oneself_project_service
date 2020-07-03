@@ -19,7 +19,7 @@ public class UserModel {
     private String id;
 
     @ApiModelProperty(value = "昵称")
-    private String nike;
+    private String nickname;
 
     @ApiModelProperty(value = "姓名")
     private String name;

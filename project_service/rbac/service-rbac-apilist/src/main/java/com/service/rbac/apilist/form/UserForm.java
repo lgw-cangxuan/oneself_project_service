@@ -18,7 +18,7 @@ public class UserForm {
 
     @NotNull(message = "昵称不能为空")
     @ApiModelProperty(value = "昵称")
-    private String nike;
+    private String nickname;
 
     @NotNull(message = "姓名不能为空")
     @ApiModelProperty(value = "姓名")

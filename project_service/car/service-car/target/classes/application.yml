@@ -1,5 +1,5 @@
 server:
-  port: 8871
+  port: 8872
 #注册到eureka
 eureka:
   instance:
@@ -11,7 +11,7 @@ eureka:
       defaultZone: http://172.16.62.68:8880/eureka/
 spring:
   application:
-    name: rbac-service
+    name: car-service
   #redis配置连接
   redis:
     database: 0

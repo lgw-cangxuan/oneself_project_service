@@ -168,7 +168,7 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.1.16.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.4" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.67" level="project" />
-    <orderEntry type="module" module-name="service-rbac-apilist" />
+    <orderEntry type="library" name="Maven: com.service.apilist:service-rbac-apilist:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="apilist-base" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-redis:2.1.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.1.18.RELEASE" level="project" />
