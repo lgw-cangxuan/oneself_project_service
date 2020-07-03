@@ -1,9 +1,6 @@
 <template>
-  <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-    <div class="background">
-      <img src="../../static/imgs/login_background.jpg" width="100%" height="100%" alt="" />
-    </div>
-    <div class="front">
+  <Form ref="formInline" :model="formInline" :rules="ruleInline" inline :style="background" inline class="background">
+    <div class="register_front">
       <h1>car系统注册</h1>
       <div>
         <FormItem prop="nike">
@@ -38,9 +35,8 @@
           <Button type="primary" @click="handleSubmit('formInline')" id="button">注册</Button>
         </FormItem>
       </div>
-      <div id="three">
-        <span class="forget"><router-link to="/">登录系统!</router-link></span>
-        <br>
+      <div>
+        <span class="login"><router-link to="/">登录系统!</router-link></span>
         <span class="forget"><router-link to="forget">忘记密码?</router-link></span>
       </div>
     </div>
@@ -50,6 +46,11 @@
   export default {
     data() {
       return {
+        background: {
+          backgroundImage: "url(" + require("../../static/imgs/login_background.jpg") + ")",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%"
+        },
         formInline: {
           nike: '',
           name: '',
@@ -101,38 +102,33 @@
 </script>
 
 <style type="text/css">
+  /*背景*/
+  .background{
+    height: 100%;
+  }
+  .register_front{
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    border-radius: 5px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+
   h1{
-    margin-bottom: 20px;
-    margin-left: -10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   #button{
     width: 190px;
   }
-  #three{
-    color: blue;
-    margin-top: -10px;
+  .login{
+    margin-left: -10px;
   }
   .forget{
-    margin-left: 120px;
-  }
-  .background{
-    width:100%;
-    height:100%;  /**宽高100%是为了图片铺满屏幕 */
-    z-index:-1;
-    position: absolute;
-  }
-  .front{
-    z-index:1;
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-top: -200px;
-    margin-left: -200px;
-    background-color: #ffffff;
-    padding-top: 20px;
-    opacity: 0.7;
-    border-radius: 5px;
+    margin-left: 80px;
   }
 </style>

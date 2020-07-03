@@ -1,25 +1,23 @@
 <template>
-  <div id="vue">Hello Vue.js! {{ message }}
-    <h1>
-      <router-link to="helloWorld">跳转至HelloVue</router-link>
-    </h1>
+  <div :style="bgImg" class="bgImg"/>
   </div>
 </template>
-
-<script type="text/javascript">
+<script>
   export default {
-    name: "HelloVue",
-    data (){
+    name: 'productdetailspage',
+    data() {
       return {
-        message: "啦啦啦啦啦"
+        bgImg: {
+          backgroundImage: "url(" + require("../../static/imgs/login_background.jpg") + ")",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%"
+        },
       }
-    }
+    },
   }
 </script>
-
 <style type="text/css">
-  #vue{
-    color: green;
-    font-size: 28px;
+  .bgImg{
+    height: 100%;
   }
 </style>
