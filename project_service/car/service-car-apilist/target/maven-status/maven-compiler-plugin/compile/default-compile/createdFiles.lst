@@ -1,4 +1,0 @@
-com\service\car\apilist\model\CarItemModel.class
-com\service\car\apilist\form\CarItemForm.class
-com\service\car\apilist\restful\ZoneConstants.class
-com\service\car\apilist\restful\car\CarItemFeign.class

@@ -35,3 +35,10 @@ mybatis:
   type-aliases-package: com.service.pc.dao
   configuration:
     map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      service:
+        pc:
+          dao: DEBUG
