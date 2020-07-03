@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import global_info from './components/js/global.js'
+Vue.prototype.GLOBAL = global_info
+
 import axios from 'axios'
 Vue.prototype.$axios = axios
 

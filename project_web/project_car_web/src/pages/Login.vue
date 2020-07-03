@@ -33,7 +33,7 @@
     data() {
       return {
         background: {
-          backgroundImage: "url(" + require("../../static/imgs/login_background.jpg") + ")",
+          backgroundImage: "url(" + this.GLOBAL.backgroundUrl + ")",
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%"
         },
