@@ -29,7 +29,7 @@ public class LoginConfig implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(getLoginInterceptor()).addPathPatterns("/**");
         //所有路径都被拦截
         registration.addPathPatterns("/**");
-        //添加不拦截路径
+        //添加不拦截路径,"/v2/**","/swagger-resources/**",不拦截，否则swagger无法加载
         registration.excludePathPatterns(
                 "/login/login",
                 "/login/forget",
@@ -39,7 +39,9 @@ public class LoginConfig implements WebMvcConfigurer {
                 "/**/*.js",
                 "/**/*.css",
                 "/**/*.woff",
-                "/**/*.ttf"
+                "/**/*.ttf",
+                "/v2/**",
+                "/swagger-resources/**"
         );
     }
 }

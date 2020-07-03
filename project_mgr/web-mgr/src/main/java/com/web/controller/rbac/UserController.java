@@ -6,7 +6,7 @@ import com.service.base.apilist.cache.cachekey.CacheKeyType;
 import com.service.rbac.apilist.form.UserForm;
 import com.service.rbac.apilist.model.UserModel;
 import com.web.controller.BaseController;
-import com.web.remote.UserRemote;
+import com.web.remote.rbac.UserRemote;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

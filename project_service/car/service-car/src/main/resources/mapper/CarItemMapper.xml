@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.service.pc.dao.CarItemMapper">
+    <select id="findAllCarName" resultType="com.service.car.apilist.model.CarItemModel">
+        select * from t_car_item
+    </select>
+
+    <insert id="insertCarName" parameterType="com.service.car.apilist.model.CarItemModel">
+        insert into t_car_item(id, name, first_letter, producers, style, create_time)
+        values(#{id}, #{name}, #{firstLetter}, #{producers}, #{style}, now())
+    </insert>
+</mapper>

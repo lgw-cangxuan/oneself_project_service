@@ -1,4 +1,4 @@
-package com.web.remote;
+package com.web.remote.rbac;
 
 import com.service.base.apilist.RequestResult;
 import com.service.rbac.apilist.form.UserForm;

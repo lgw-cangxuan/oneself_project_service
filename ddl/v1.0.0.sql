@@ -13,7 +13,6 @@ CREATE TABLE `t_car_name` (
   `id` varchar(50) NOT NULL COMMENT '主键id',
   `name` varchar(50) NOT NULL COMMENT '汽车名称',
   `first_letter` char(1) NOT NULL COMMENT '第一个字母',
-  `area` varchar(20) NOT NULL COMMENT '地区',
   `producers` varchar(50) NOT NULL COMMENT '生产商',
   `style` varchar(50) NOT NULL COMMENT '款式',
   `create_time` datetime NOT NULL COMMENT '创建时间',
