@@ -21,7 +21,7 @@
           <Button type="primary" @click="handleSubmit('formInline')" id="button">登录</Button>
         </FormItem>
       </div>
-      <div id="three">
+      <div>
         <span class="login_register"><router-link to="register">注册账号!</router-link></span>
         <span class="login_forget"><router-link to="forget">忘记密码?</router-link></span>
       </div>
