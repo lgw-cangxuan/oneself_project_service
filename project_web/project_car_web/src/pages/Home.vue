@@ -1,8 +1,11 @@
 <template>
   <nav>
+    <!-- 登录|注册 -->
     <div class="log_register">
-      <router-link to="register">登录</router-link> 丨 <router-link to="forget">注册</router-link>
+      <router-link to="/" class="login" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">登录</router-link> |
+      <router-link to="register" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">注册</router-link>
     </div>
+    <!-- 搜索栏 -->
     <div class="top">
       <input type="text" class="search">
       <button class="search_button" onMouseOut="this.style.backgroundColor=''" onMouseOver="this.style.backgroundColor='#2e4ecf'">搜索</button>
@@ -32,6 +35,12 @@
         </ul>
       </div>
     </div>
+    <!-- 主部分 -->
+    <div>
+        <div>
+
+        </div>
+    </div>
   </nav>
 </template>
 
@@ -47,8 +56,11 @@
 </script>
 <style type="text/css">
   /* 导航栏 */
+  .login{
+    margin-left: 85%;
+  }
   .log_register{
-
+    margin-top: 20px;
   }
 
   .top{
