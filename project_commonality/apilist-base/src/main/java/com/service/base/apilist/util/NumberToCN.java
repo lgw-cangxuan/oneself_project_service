@@ -119,7 +119,7 @@ public class NumberToCN {
     }
 
     public static void main(String[] args) {
-        double money = 2001020000531.06;
+        double money = 200050035800240.36;
         BigDecimal numberOfMoney = new BigDecimal(money);
         String s = NumberToCN.numberCNMontrayUnit(numberOfMoney);
         String s1 = NumberToCN.number2CNMontrayUnit(numberOfMoney);
@@ -156,22 +156,18 @@ public class NumberToCN {
                 result = CN_UPPER_NUMBER[s] + CN_UPPER_MONETRAY_UNIT[num] + result;
             }else{
                 //特殊单位要处理
-                if(num == 2){
-                    result = CN_UPPER_MONETRAY_UNIT[num] + result;
-                }else{
-                    if(i<length-1){
-                        //分以上单位一个0的处理
-                        if(Integer.parseInt(numberChar[i+1]+"")!=0){
-                            if(num == 6 || num == 10 || num == 14) {
-                                result = CN_UPPER_MONETRAY_UNIT[num] + CN_UPPER_NUMBER[s] + result;
-                            }else{
-                                result = CN_UPPER_NUMBER[s] + result;
-                            }
+                if(i<length-1){
+                    //分以上单位一个0的处理
+                    if(Integer.parseInt(numberChar[i+1]+"")!=0){
+                        if(num == 2 || num == 6 || num == 10 || num == 14) {
+                            result = CN_UPPER_MONETRAY_UNIT[num] + CN_UPPER_NUMBER[s] + result;
                         }else{
-                            //连续0的处理
-                            if(num == 6 || num == 10 || num == 14) {
-                                result = CN_UPPER_MONETRAY_UNIT[num] + result;
-                            }
+                            result = CN_UPPER_NUMBER[s] + result;
+                        }
+                    }else{
+                        //连续0的处理
+                        if(num == 2 || num == 6 || num == 10 || num == 14) {
+                            result = CN_UPPER_MONETRAY_UNIT[num] + result;
                         }
                     }
                 }
