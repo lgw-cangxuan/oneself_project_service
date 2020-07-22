@@ -1,9 +1,11 @@
 package com.web.controller.websocket;
 
 import com.alibaba.fastjson.JSONObject;
+import com.service.car.apilist.form.UserMessageForm;
 import com.service.rbac.apilist.model.MsgVOModel;
 import com.service.rbac.apilist.model.UserModel;
-import com.service.rbac.apilist.restful.user.UserFeign;
+import com.web.remote.car.UserMessageRemote;
+import com.web.remote.rbac.UserRemote;
 import com.web.util.ApplicationContextUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -46,11 +48,16 @@ public class WebSocketServerController {
     public void onMessage(@PathParam("sid") String sid, @PathParam("userId") String userId, String message) {
         List<Session> sessionList = groupMemberInfoMap.get(sid);
         Set<String> onlineUserList = onlineUserMap.get(sid);
+        // json字符串转对象
+        MsgVOModel msg = JSONObject.parseObject(message, MsgVOModel.class);
+        UserMessageForm form = new UserMessageForm();
+        form.setUserId(userId);
+        form.setGroupId(sid);
+        form.setMessageContent(msg.getMsg());
+        ApplicationContextUtil.getApplicationContext().getBean(UserMessageRemote.class).insertUserMessage(form);
         // 先一个群组内的成员发送消息
         sessionList.forEach(item -> {
             try {
-                // json字符串转对象
-                MsgVOModel msg = JSONObject.parseObject(message, MsgVOModel.class);
                 msg.setCount(onlineUserList.size());
                 // json对象转字符串
                 String text = JSONObject.toJSONString(msg);
@@ -80,7 +87,7 @@ public class WebSocketServerController {
 
     public void sendInfo(String sid, String userId, Integer onlineSum, String info) {
         // 获取该连接用户信息
-        UserModel currentUser =  ApplicationContextUtil.getApplicationContext().getBean(UserFeign.class).queryUserById(userId).pickBody();
+        UserModel currentUser =  ApplicationContextUtil.getApplicationContext().getBean(UserRemote.class).queryUserById(userId).pickBody();
         // 发送通知
         MsgVOModel msg = new MsgVOModel();
         msg.setCount(onlineSum);

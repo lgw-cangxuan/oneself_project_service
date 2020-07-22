@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.service.pc.dao.UserMessageMapper">
+    <select id="findAllUserMessage" resultType="com.service.car.apilist.model.UserMessageModel">
+        select * from t_car_item
+    </select>
+
+    <insert id="insertUserMessage" parameterType="com.service.car.apilist.form.UserMessageForm">
+        insert into t_user_message(id, user_id, to_user_id, group_id, message_content, create_time)
+        values(#{id}, #{userId} , #{toUserId} , #{groupId} , #{messageContent} , now())
+    </insert>
+</mapper>

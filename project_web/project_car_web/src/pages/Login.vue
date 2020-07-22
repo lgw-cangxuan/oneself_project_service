@@ -69,6 +69,7 @@
               this.$cookies.set("userId", res.data.result.id);
               this.$cookies.set("username", res.data.result.nickname);
               this.$cookies.set("avatar", res.data.result.avatarUrl);
+              this.$cookies.set("token", res.data.result.token);
               this.$router.push('home');
             }).catch(err => {
               this.$Message.error(err.response.data.message);

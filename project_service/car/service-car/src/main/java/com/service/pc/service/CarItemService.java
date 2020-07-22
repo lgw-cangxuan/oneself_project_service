@@ -1,5 +1,6 @@
 package com.service.pc.service;
 
+import com.service.base.apilist.idutil.SnowflakesIdUtil;
 import com.service.car.apilist.model.CarItemModel;
 import com.service.pc.dao.CarItemMapper;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class CarItemService {
 
     public boolean insertCarName(CarItemModel model){
         try{
+            model.setId(SnowflakesIdUtil.getInstance().nextIdAsString());
             carNameMapper.insertCarName(model);
             return true;
         }catch (RuntimeException ex){

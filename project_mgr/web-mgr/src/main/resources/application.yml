@@ -24,3 +24,6 @@ spring:
         max-idle: 10
         max-wait: 100000
     timeout: 5000
+
+  main:
+    allow-bean-definition-overriding: true

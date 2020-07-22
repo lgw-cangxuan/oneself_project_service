@@ -13,11 +13,9 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 public class PhoneAndPasswordForm {
-    @NotNull(message = "手机号码不能为空")
     @ApiModelProperty(value = "手机号码")
     private String phone;
 
-    @NotNull(message = "密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;
 

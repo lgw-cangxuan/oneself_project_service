@@ -16,23 +16,18 @@ public class UserForm {
     @ApiModelProperty(value = "id", hidden = true)
     private String id;
 
-    @NotNull(message = "昵称不能为空")
     @ApiModelProperty(value = "昵称")
     private String nickname;
 
-    @NotNull(message = "姓名不能为空")
     @ApiModelProperty(value = "姓名")
     private String name;
 
-    @NotNull(message = "电话号码不能为空")
     @ApiModelProperty(value = "电话号码")
     private String phone;
 
-    @NotNull(message = "密码不能为空")
     @ApiModelProperty(value = "密码")
     private String password;
 
-    @NotNull(message = "头像不能为空")
     @ApiModelProperty(value = "头像")
     private String avatarUrl;
 }
