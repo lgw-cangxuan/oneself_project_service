@@ -74,7 +74,7 @@ public class WebSocketServerController {
         onlineUserList.add(userId);
         sessionList.add(session);
         // 发送上线通知
-        sendInfo(sid, userId, onlineUserList.size(), "上线了~");
+        sendInfo(sid, userId, onlineUserList.size(), "我来了~");
     }
 
 

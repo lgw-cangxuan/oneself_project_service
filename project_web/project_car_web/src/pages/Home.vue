@@ -3,7 +3,8 @@
     <!-- 登录|注册 -->
     <div class="log_register">
       <router-link to="/" class="login" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">登录</router-link> |
-      <router-link to="register" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">注册</router-link>
+      <router-link to="register" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">注册</router-link> |
+      <router-link to="chat" onMouseOut="this.style.color=''" onMouseOver="this.style.color='#ff0000'">交流</router-link>
     </div>
     <!-- 搜索栏 -->
     <div class="top">
