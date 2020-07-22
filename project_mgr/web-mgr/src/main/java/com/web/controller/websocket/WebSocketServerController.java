@@ -1,9 +1,11 @@
 package com.web.controller.websocket;
 
 import com.alibaba.fastjson.JSONObject;
+import com.service.base.apilist.enums.JsonCommonCodeEnum;
 import com.service.car.apilist.form.UserMessageForm;
 import com.service.rbac.apilist.model.MsgVOModel;
 import com.service.rbac.apilist.model.UserModel;
+import com.web.exception.GlobalRequestException;
 import com.web.remote.car.UserMessageRemote;
 import com.web.remote.rbac.UserRemote;
 import com.web.util.ApplicationContextUtil;
@@ -88,6 +90,9 @@ public class WebSocketServerController {
     public void sendInfo(String sid, String userId, Integer onlineSum, String info) {
         // 获取该连接用户信息
         UserModel currentUser =  ApplicationContextUtil.getApplicationContext().getBean(UserRemote.class).queryUserById(userId).pickBody();
+        if(currentUser == null){
+            throw new GlobalRequestException("请登录！", JsonCommonCodeEnum.C0001);
+        }
         // 发送通知
         MsgVOModel msg = new MsgVOModel();
         msg.setCount(onlineSum);
