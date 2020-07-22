@@ -30,6 +30,13 @@ public interface UserMapper {
     UserModel queryUserByNameAndPassword(PhoneAndPasswordForm form);
 
     /**
+     * query user by id
+     * @param id
+     * @return
+     */
+    UserModel queryUserById(String id);
+
+    /**
      * insert user info
      * @param form user info
      */

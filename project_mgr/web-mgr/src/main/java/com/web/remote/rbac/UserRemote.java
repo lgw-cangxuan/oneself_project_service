@@ -25,6 +25,10 @@ public class UserRemote {
         return userFeign.findAllUser();
     }
 
+    public RequestResult<UserModel> queryUserById(String id){
+        return userFeign.queryUserById(id);
+    }
+
     public RequestResult<Boolean> insertUser(UserForm form){
         return userFeign.insertUser(form);
     }

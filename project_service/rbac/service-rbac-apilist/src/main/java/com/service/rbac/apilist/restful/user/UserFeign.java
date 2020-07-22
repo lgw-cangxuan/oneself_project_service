@@ -48,4 +48,12 @@ public interface UserFeign {
      */
     @RequestMapping(value = "/user/queryUserByNameAndPassword", method = RequestMethod.POST)
     RequestResult<UserModel> queryUserByNameAndPassword(PhoneAndPasswordForm form);
+
+    /**
+     * query user by id
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/user/queryUserById", method = RequestMethod.POST)
+    RequestResult<UserModel> queryUserById(String id);
 }

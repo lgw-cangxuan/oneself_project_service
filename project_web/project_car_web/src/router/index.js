@@ -5,6 +5,7 @@ import Register from '@/pages/Register'
 import Forget from '@/pages/Forget'
 import Home from '@/pages/Home'
 import HelloWorld from '@/components/HelloWorld'
+import Chat from '@/pages/Chat'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path:'/forget',
       name:'Forget',
       component:Forget
+    },
+    {
+      path:'/chat',
+      name:'Chat',
+      component:Chat
     }
   ]
 })

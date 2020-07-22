@@ -46,6 +46,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.service.apilist</groupId>
             <artifactId>service-rbac-apilist</artifactId>
             <version>0.0.1-SNAPSHOT</version>
@@ -56,6 +61,10 @@
             <artifactId>service-car-apilist</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 

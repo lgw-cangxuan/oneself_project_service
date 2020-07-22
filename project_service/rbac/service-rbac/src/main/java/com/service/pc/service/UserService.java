@@ -32,6 +32,10 @@ public class UserService {
         return userModel;
     }
 
+    public UserModel queryUserById(String id){
+        return userMapper.queryUserById(id);
+    }
+
     public Boolean insertUser(UserForm form){
         try{
             form.setId(SnowflakesIdUtil.getInstance().nextIdAsString());

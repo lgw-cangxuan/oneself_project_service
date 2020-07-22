@@ -9,9 +9,13 @@
         select * from t_user where phone = #{phone} and password = #{password}
     </select>
 
+    <select id="queryUserById" parameterType="String" resultType="com.service.rbac.apilist.model.UserModel">
+        select * from t_user where id = #{id}
+    </select>
+
     <insert id="insertUser" parameterType="com.service.rbac.apilist.form.UserForm">
-        insert into t_user(id, nickname, name, phone, password, create_time)
-        values(#{id}, #{nickname}, #{name}, #{phone}, #{password}, now())
+        insert into t_user(id, nickname, name, phone, password,avatar_url, create_time)
+        values(#{id}, #{nickname}, #{name}, #{phone}, #{password}, #{avatarUrl}, now())
     </insert>
 
     <update id="updateUser" parameterType="com.service.rbac.apilist.form.UserForm">
@@ -21,6 +25,7 @@
             <if test="name != null and name != ''">name = #{name},</if>
             <if test="phone != null and phone != ''">phone = #{phone},</if>
             <if test="password != null and password != ''">password = #{password},</if>
+            <if test="avatarUrl != null and avatarUrl != ''">avatar_url = #{avatarUrl},</if>
         </set>
         where id = #{id}
     </update>

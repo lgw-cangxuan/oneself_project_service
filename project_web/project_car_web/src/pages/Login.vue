@@ -66,7 +66,10 @@
               method: 'post',//请求的方式
               data: this.formInline//请求的表单数据
             }).then(res => {
-              this.$router.push('home');
+              this.$cookies.set("userId", res.data.result.id);
+              this.$cookies.set("username", res.data.result.nickname);
+              this.$cookies.set("avatar", res.data.result.avatarUrl);
+              this.$router.push('chat');
             }).catch(err => {
               this.$Message.error(err.response.data.message);
             });

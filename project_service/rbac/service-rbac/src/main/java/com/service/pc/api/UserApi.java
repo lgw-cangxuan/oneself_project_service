@@ -35,4 +35,9 @@ public class UserApi{
         return new RequestResult<>(userService.queryUserByNameAndPassword(form));
     }
 
+    @PostMapping(value = "/queryUserById")
+    public RequestResult<UserModel> queryUserById(@RequestBody String id){
+        return new RequestResult<>(userService.queryUserById(id));
+    }
+
 }

@@ -17,6 +17,7 @@
     "axios": "^0.19.2",
     "iview": "^3.5.4",
     "vue": "^2.5.2",
+    "vue-cookies": "^1.7.3",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
