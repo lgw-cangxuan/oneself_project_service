@@ -1,7 +1,9 @@
 package com.service.car.apilist.model;
 
+import com.service.base.apilist.util.CommonDateUtil;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
 import java.util.Date;
 
 /**
@@ -28,4 +30,14 @@ public class UserMessageModel {
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
+
+    @ApiModelProperty(value = "昵称")
+    private String nickname;
+
+    @ApiModelProperty(value = "头像")
+    private String avatarUrl;
+
+    public String getCreateTimeDesc(){
+        return createTime == null ? null : CommonDateUtil.formatDateToyyyy_MM_dd_HH_mm_ss(createTime);
+    }
 }

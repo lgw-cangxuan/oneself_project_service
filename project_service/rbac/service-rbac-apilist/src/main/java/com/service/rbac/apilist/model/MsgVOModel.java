@@ -17,13 +17,13 @@ public class MsgVOModel {
     private String userId;
 
     @ApiModelProperty(value = "用户名")
-    private String username;
+    private String nickname;
 
     @ApiModelProperty(value = "用户头像")
-    private String avatar;
+    private String avatarUrl;
 
     @ApiModelProperty(value = "消息")
-    private String msg;
+    private String messageContent;
 
     @ApiModelProperty(value = "在线人数")
     private int count;

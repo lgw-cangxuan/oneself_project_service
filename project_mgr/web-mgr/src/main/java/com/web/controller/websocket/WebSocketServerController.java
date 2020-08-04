@@ -10,7 +10,9 @@ import com.web.remote.car.UserMessageRemote;
 import com.web.remote.rbac.UserRemote;
 import com.web.util.ApplicationContextUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
+
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -47,16 +49,19 @@ public class WebSocketServerController {
      * @param message：发送消息
      */
     @OnMessage
-    public void onMessage(@PathParam("sid") String sid, @PathParam("userId") String userId, String message) {
+    public void onMessage(@PathParam("sid") String sid, @PathParam("userId") String userId, @PathParam("messageType") String messageType, String message) {
         List<Session> sessionList = groupMemberInfoMap.get(sid);
         Set<String> onlineUserList = onlineUserMap.get(sid);
         // json字符串转对象
         MsgVOModel msg = JSONObject.parseObject(message, MsgVOModel.class);
-        UserMessageForm form = new UserMessageForm();
-        form.setUserId(userId);
-        form.setGroupId(sid);
-        form.setMessageContent(msg.getMsg());
-        ApplicationContextUtil.getApplicationContext().getBean(UserMessageRemote.class).insertUserMessage(form);
+        // 聊天中的记录被保存
+        if (StringUtils.isEmpty(messageType)) {
+            UserMessageForm form = new UserMessageForm();
+            form.setUserId(userId);
+            form.setGroupId(sid);
+            form.setMessageContent(msg.getMessageContent());
+            ApplicationContextUtil.getApplicationContext().getBean(UserMessageRemote.class).insertUserMessage(form);
+        }
         // 先一个群组内的成员发送消息
         sessionList.forEach(item -> {
             try {
@@ -83,26 +88,26 @@ public class WebSocketServerController {
         onlineUserList.add(userId);
         sessionList.add(session);
         // 发送上线通知
-        sendInfo(sid, userId, onlineUserList.size(), "我来了~");
+        sendInfo(sid, userId, onlineUserList.size(), "hello!我来了~", "ON_OPEN");
     }
 
 
-    public void sendInfo(String sid, String userId, Integer onlineSum, String info) {
+    public void sendInfo(String sid, String userId, Integer onlineSum, String info, String messageType) {
         // 获取该连接用户信息
-        UserModel currentUser =  ApplicationContextUtil.getApplicationContext().getBean(UserRemote.class).queryUserById(userId).pickBody();
-        if(currentUser == null){
+        UserModel currentUser = ApplicationContextUtil.getApplicationContext().getBean(UserRemote.class).queryUserById(userId).pickBody();
+        if (currentUser == null) {
             throw new GlobalRequestException("请登录！", JsonCommonCodeEnum.C0001);
         }
         // 发送通知
         MsgVOModel msg = new MsgVOModel();
         msg.setCount(onlineSum);
         msg.setUserId(userId);
-        msg.setAvatar(currentUser.getAvatarUrl());
-        msg.setUsername(currentUser.getNickname());
-        msg.setMsg(info);
+        msg.setAvatarUrl(currentUser.getAvatarUrl());
+        msg.setNickname(currentUser.getNickname());
+        msg.setMessageContent(info);
         // json对象转字符串
         String text = JSONObject.toJSONString(msg);
-        onMessage(sid, userId, text);
+        onMessage(sid, userId, messageType, text);
     }
 
     /**
@@ -118,7 +123,7 @@ public class WebSocketServerController {
         Set<String> onlineUserList = onlineUserMap.get(sid);
         onlineUserList.remove(userId);
         // 发送离线通知
-        sendInfo(sid, userId, onlineUserList.size(), "下线了~");
+        sendInfo(sid, userId, onlineUserList.size(), "拜拜!", "ON_CLOSE");
     }
 
     /**

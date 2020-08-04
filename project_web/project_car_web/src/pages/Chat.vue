@@ -9,13 +9,13 @@
         :style="i.userId == userId?'flex-direction:row-reverse':''"
       >
         <div class="user-name">
-          <span>{{i.username}}</span>
+          <span>{{i.nickname}}</span>
         </div>
         <div class="user-head">
-          <img :src="i.avatar" height="30" width="30">
+          <img :src="i.avatarUrl" height="30" width="30">
         </div>
         <div class="user-msg">
-          <span :style="i.userId == userId?' float: right;':''" :class="i.userId == userId?'right':'left'">{{i.content}}</span>
+          <span :style="i.userId == userId?' float: right;':''" :class="i.userId == userId?'right':'left'">{{i.messageContent}}</span>
         </div>
       </div>
     </div>
@@ -42,6 +42,7 @@
     },
     mounted() {
       this.initWebSocket();
+      this.queryMessageRecord();
     },
     destroyed() {
       // 离开页面时关闭websocket连接
@@ -57,9 +58,9 @@
         }
         let params = {
           userId: _this.userId,
-          username: _this.username,
-          avatar: _this.avatar,
-          msg: _this.contentText,
+          nickname: _this.username,
+          avatarUrl: _this.avatar,
+          messageContent: _this.contentText,
           count: _this.count
         };
         _this.ws.send(JSON.stringify(params)); //调用WebSocket send()发送信息的方法
@@ -94,7 +95,7 @@
             _this.count = resData.count;
             _this.list = [
               ..._this.list,
-              { userId: resData.userId, username: resData.username, avatar: resData.avatar, content: resData.msg }
+              { userId: resData.userId, nickname: resData.nickname, avatarUrl: resData.avatarUrl, messageContent: resData.messageContent }
             ];
           };
         }
@@ -103,6 +104,22 @@
       scrollBottm() {
         let el = this.$refs["msg-box"];
         el.scrollTop = el.scrollHeight;
+      },
+      queryMessageRecord(){
+        console.log("初始化加载");
+        let _this = this;
+        this.$axios({
+          url: '/message/message/findAllUserMessage',//请求的地址
+          method: 'get',//请求的方式
+          headers: {
+            'Authorization': this.$cookies.get("token")
+          }
+        }).then(res => {
+          _this.list = res.data.result;
+          console.log(_this.list);
+        }).catch(err => {
+          this.$Message.error(err.response.data.message);
+        });
       }
     }
   };

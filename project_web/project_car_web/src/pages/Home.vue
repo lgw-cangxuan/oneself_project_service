@@ -15,22 +15,22 @@
     <div class="indexNavOut">
       <div class="indexNav">
         <ul class="navLi">
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">测评</router-link>
           </li>
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">文章</router-link>
           </li>
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">选车</router-link>
           </li>
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">图片</router-link>
           </li>
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">车型对比</router-link>
           </li>
-          <li v-bind:class="{'active':Index=='#/'}">
+          <li v-bind:class="">
             <router-link to="/">论坛</router-link>
           </li>
         </ul>
