@@ -15,7 +15,7 @@ spring:
   #redis配置连接
   redis:
     database: 0
-    host: 192.168.31.128
+    host: 192.168.31.129
     port: 6379
     jedis:
       pool:
@@ -25,7 +25,7 @@ spring:
     timeout: 5000
   #mysql配置连接 serverTimezone=GMT%2B8 表示时区格式为东八区
   datasource:
-    url: jdbc:mysql://192.168.31.128:3306/car_base?useJDBCCompliantTimezoneShift=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://192.168.31.129:3306/car_base?useJDBCCompliantTimezoneShift=true&serverTimezone=GMT%2B8
     username: root
     password: 123456Aa@
     driver-class-name:  com.mysql.cj.jdbc.Driver
