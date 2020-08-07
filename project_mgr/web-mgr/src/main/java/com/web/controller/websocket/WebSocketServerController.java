@@ -132,7 +132,7 @@ public class WebSocketServerController {
      * @param error
      */
     @OnError
-    public void OnError(Throwable error) {
+    public void onError(Throwable error) {
         log.info("Connection error");
     }
 }
