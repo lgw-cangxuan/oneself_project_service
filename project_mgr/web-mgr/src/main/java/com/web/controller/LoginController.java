@@ -2,7 +2,6 @@ package com.web.controller;
 
 import com.service.rbac.apilist.form.PhoneAndPasswordForm;
 import com.service.rbac.apilist.form.UserForm;
-import com.web.controller.BaseController;
 import com.web.remote.LoginRemote;
 import com.web.remote.rbac.UserRemote;
 import io.swagger.annotations.Api;

@@ -38,6 +38,7 @@ public class LoginRemote {
             LoginUserInfoModel userInfoModel = mapper.map(userModel, LoginUserInfoModel.class);
             String phone = userInfoModel.getPhone();
             //把手机号用md5随机加盐加密组成token
+            userInfoModel.setPassword(null);
             String token = phone+"_"+ MD5_Encoding.generateRandomSalt(phone);
             userInfoModel.setToken(token);
             //把token保存到redis
